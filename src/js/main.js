@@ -1,7 +1,6 @@
 import "../css/style.css";
 import { Actor, Engine, Vector, Label, Font, Color } from "excalibur";
 import { Resources, ResourceLoader } from "./resources.js";
-import { Background } from "./background.js";
 
 export class Game extends Engine {
   constructor() {
@@ -24,15 +23,15 @@ export class Game extends Engine {
     textField.pos = new Vector(20, 30);
     this.add(textField);
 
-    // //background
-    // const bgImg = new Actor();
-    // bgImg.graphics.use(Resources.bgImg.toSprite());
-    // bgImg.pos = new Vector(400, 200);
-    // bgImg.scale = new Vector(0.4, 0.4);
-    // this.add(bgImg);
+    //background
+    const bgImg = new Actor();
+    bgImg.graphics.use(Resources.bgImg.toSprite());
+    bgImg.pos = new Vector(400, 200);
+    bgImg.scale = new Vector(0.4, 0.4);
+    this.add(bgImg);
 
-    // //background moving
-    // bgImg.vel.x = -5;
+    //background moving
+    bgImg.vel.x = -5;
 
     //player
     const player = new Actor();
