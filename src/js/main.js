@@ -5,7 +5,7 @@ import { Background } from "./background";
 
 export class Game extends Engine {
   constructor() {
-    super({ width: 1080, height: 600 });
+    super({ width: 800, height: 700 });
     this.start(ResourceLoader).then(() => this.startGame());
     // als je geen plaatjes wil laden:
     // this.start().then(() => this.startGame())
@@ -27,15 +27,6 @@ export class Game extends Engine {
     //background
     const bgImg = new Background();
     this.add(bgImg);
-
-    // const test = new Actor();
-    // test.graphics.use(Resources.BgImg.toSprite());
-    // test.pos = new Vector(400, 200);
-    // test.scale = new Vector(0.4, 0.4);
-    // this.add(test);
-
-    //background moving
-    // test.vel.x = -5;
 
     //player
     const player = new Actor();
