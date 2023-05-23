@@ -5,11 +5,8 @@ export class Player extends Actor {
   onPreUpdate(engine) {
     let xspeed = 0;
     let yspeed = 0;
-    if (
-      engine.input.keyboard.isHeld(Input.Keys.W) ||
-      engine.input.keyboard.isHeld(Input.Keys.Up)
-    ) {
-      yspeed = -300;
+    if (engine.input.keyboard.isHeld(Input.Keys.W)) {
+      yspeed = 300;
     }
     if (
       engine.input.keyboard.isHeld(Input.Keys.Space) ||

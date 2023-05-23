@@ -24,9 +24,25 @@ export class Game extends Engine {
     textField.pos = new Vector(20, 30);
     this.add(textField);
 
-    //background
-    const bgImg = new Background();
-    this.add(bgImg);
+    //#region background
+    const bgImgsky = new Background();
+    this.add(bgImgsky);
+
+    const bgImgBuild2 = new Background();
+    this.add(bgImgBuild2);
+
+    const bgImgBuild3 = new Background();
+    this.add(bgImgBuild3);
+
+    const bgImgBuild4 = new Background();
+    this.add(bgImgBuild4);
+
+    const bgImgBuild5 = new Background();
+    this.add(bgImgBuild5);
+
+    const bgImgBuild6 = new Background();
+    this.add(bgImgBuild6);
+    //#endregion background
 
     //player
     const player = new Actor();
