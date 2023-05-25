@@ -2,6 +2,7 @@ import "../css/style.css";
 import { Actor, Engine, Vector, Label, Font, Color } from "excalibur";
 import { Resources, ResourceLoader } from "./resources.js";
 import { Background } from "./background";
+import { Floor } from "./floor";
 
 export class Game extends Engine {
   constructor() {
@@ -25,28 +26,36 @@ export class Game extends Engine {
     this.add(textField);
 
     //#region background
-    const bgImgsky = new Background();
-    this.add(bgImgsky);
+    // const bgImgsky = new Background();
+    // this.add(bgImgsky);
 
-    const bgImgBuild2 = new Background();
-    this.add(bgImgBuild2);
+    // const bgImgBuild2 = new Background();
+    // this.add(bgImgBuild2);
 
-    const bgImgBuild3 = new Background();
-    this.add(bgImgBuild3);
+    // const bgImgBuild3 = new Background();
+    // this.add(bgImgBuild3);
 
-    const bgImgBuild4 = new Background();
-    this.add(bgImgBuild4);
+    // const bgImgBuild4 = new Background();
+    // this.add(bgImgBuild4);
 
-    const bgImgBuild5 = new Background();
-    this.add(bgImgBuild5);
+    // const bgImgBuild5 = new Background();
+    // this.add(bgImgBuild5);
 
-    const bgImgBuild6 = new Background();
-    this.add(bgImgBuild6);
+    // const bgImgBuild6 = new Background();
+    // this.add(bgImgBuild6);
+
+    const bgImgBuild10 = new Background();
+    this.add(bgImgBuild10);
     //#endregion background
 
-    //player
+    const floorImg = new Floor();
+    this.add(floorImg);
+
+    //#region player
     const player = new Actor();
     player.graphics.use(Resources.toSprite);
+
+    //#endregion player
   }
 }
 
