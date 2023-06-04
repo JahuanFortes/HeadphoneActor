@@ -1,7 +1,7 @@
 import { Actor, GraphicsGroup, Vector, CollisionType } from "excalibur";
 import { Resources } from "./resources.js";
 
-export class Floor extends Actor {
+export class Street extends Actor {
   offset;
   // constructor() {
   //   super({
@@ -12,23 +12,23 @@ export class Floor extends Actor {
   //   this.body.useGravity = true;
   // }
   onInitialize(engine) {
-    const floor = Resources.FloorIMG.toSprite();
-    this.offset = floor.width;
+    const streetIMG = Resources.StreetIMG.toSprite();
+    this.offset = streetIMG.width;
 
-    const groupfloor = new GraphicsGroup({
+    const groupstreetIMG = new GraphicsGroup({
       members: [
         {
-          graphic: floor,
+          graphic: streetIMG,
           pos: new Vector(0, 0),
         },
         {
-          graphic: floor,
+          graphic: streetIMG,
           pos: new Vector(this.offset, 0),
         },
       ],
     });
     //this.graphics.anchor = new Vector(0, 0);
-    this.graphics.add(groupfloor);
+    this.graphics.add(groupstreetIMG);
     this.pos = new Vector(0, 450);
     // this.vel = new Vector(-10, 0);
     this.scale = new Vector(0.9, 0.9);

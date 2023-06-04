@@ -2,7 +2,7 @@ import "../css/style.css";
 import { Actor, Engine, Vector, Label, Font, Color, Physics } from "excalibur";
 import { Resources, ResourceLoader } from "./resources.js";
 import { Background } from "./background";
-import { Floor } from "./floor";
+import { Floor, Street } from "./floor";
 import { Ground } from "./ground";
 
 export class Game extends Engine {
@@ -31,30 +31,12 @@ export class Game extends Engine {
     this.add(textField);
 
     //#region background
-    // const bgImgsky = new Background();
-    // this.add(bgImgsky);
-
-    // const bgImgBuild2 = new Background();
-    // this.add(bgImgBuild2);
-
-    // const bgImgBuild3 = new Background();
-    // this.add(bgImgBuild3);
-
-    // const bgImgBuild4 = new Background();
-    // this.add(bgImgBuild4);
-
-    // const bgImgBuild5 = new Background();
-    // this.add(bgImgBuild5);
-
-    // const bgImgBuild6 = new Background();
-    // this.add(bgImgBuild6);
-
-    const bgImgBuild10 = new Background();
-    this.add(bgImgBuild10);
+    const bgImg = new Background();
+    this.add(bgImg);
     //#endregion background
 
-    const floorImg = new Floor();
-    this.add(floorImg);
+    const streetIMG = new Street();
+    this.add(streetIMG);
 
     const groundtest = new Ground();
     this.add(groundtest);
