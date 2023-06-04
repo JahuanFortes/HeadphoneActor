@@ -7,6 +7,7 @@ import bgImgBuild5 from "../images/5.png";
 import bgImgBuild6 from "../images/6.png";
 import bgImgBuild10 from "../images/10.png";
 import floorImg from "../images/Lamp-Sprite1.png";
+import groundTest from "../images/Sprite-0001.png";
 
 const Resources = {
   BgImgSky: new ImageSource(bgImageSky),
@@ -17,6 +18,7 @@ const Resources = {
   BgImgBuild6: new ImageSource(bgImgBuild6),
   BgImgBuild10: new ImageSource(bgImgBuild10),
   FloorIMG: new ImageSource(floorImg),
+  GroundTest: new ImageSource(groundTest),
 };
 
 const ResourceLoader = new Loader([
@@ -28,6 +30,7 @@ const ResourceLoader = new Loader([
   Resources.BgImgBuild6,
   Resources.BgImgBuild10,
   Resources.FloorIMG,
+  Resources.GroundTest,
 ]);
 
 export { Resources, ResourceLoader };

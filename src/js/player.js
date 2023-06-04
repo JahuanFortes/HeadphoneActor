@@ -2,6 +2,9 @@ import { ImageSource, Sound, Resource, Loader, Actor } from "excalibur";
 import { Actor, Vector, Input } from "excalibur";
 
 export class Player extends Actor {
+  constructor() {
+    super({});
+  }
   onPreUpdate(engine) {
     let xspeed = 0;
     let yspeed = 0;
