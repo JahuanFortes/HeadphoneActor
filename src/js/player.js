@@ -3,6 +3,10 @@ import { Resources } from "./resources.js";
 import { Vector, Input } from "excalibur";
 
 export class Player extends Actor {
+  constructor() {
+    super({ width: 150, height: 200 });
+  }
+
   onPreUpdate(engine) {
     const player = Resources.Player.toSprite();
     let yspeed = 0;
@@ -19,6 +23,6 @@ export class Player extends Actor {
 
     this.graphics.add(player);
     this.vel = new Vector(yspeed);
-    this.scale = new Vector(5, 5);
+    this.scale = new Vector(30, 30);
   }
 }

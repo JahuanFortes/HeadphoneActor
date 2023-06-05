@@ -9,11 +9,13 @@ import { BGM } from "../bgm";
 import { Scene } from "excalibur";
 
 export class Main extends Scene {
+  game;
   constructor() {
     super({ width: 800, height: 700 });
   }
   onInitialize(engine) {
     // voorbeeld tekstlabel
+    this.game = engine;
     let textField = new Label({
       font: new Font({
         family: "points",
@@ -21,8 +23,6 @@ export class Main extends Scene {
         color: Color.White,
       }),
     });
-
-    let time = 0;
 
     const bgm = new BGM();
     // Resources.BGM.play(0.7);
@@ -38,6 +38,7 @@ export class Main extends Scene {
 
     const platform = new Platform();
     this.add(platform);
+
     //#region player
     const player = new Player();
     this.add(player);
