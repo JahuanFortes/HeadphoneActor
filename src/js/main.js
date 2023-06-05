@@ -2,9 +2,13 @@ import "../css/style.css";
 import { Actor, Engine, Vector, Label, Font, Color, Physics } from "excalibur";
 import { Resources, ResourceLoader } from "./resources.js";
 import { Background } from "./background";
-import { Floor, Street } from "./floor";
-import { Ground } from "./ground";
-
+import { Street } from "./street";
+import { Platform } from "./platform";
+import { Player } from "./player";
+import { BGM } from "./bgm";
+import { Main } from "./scenes/game";
+import { TitleScreen } from "./scenes/titlescreen";
+import { GameOver } from "./scenes/gameover";
 export class Game extends Engine {
   constructor() {
     super({ width: 800, height: 700 });
@@ -18,35 +22,15 @@ export class Game extends Engine {
 
   startGame() {
     // voorbeeld tekstlabel
-    let textField = new Label({
-      font: new Font({
-        family: "po",
-        size: 32,
-        color: Color.White,
-      }),
-    });
+    // this.addScene("titlescreen", new TitleScreen());
+    // this.goToScene("titlescreen");
 
-    textField.text = `Score: 0`;
-    textField.pos = new Vector(20, 30);
-    this.add(textField);
+    this.addScene("game-scene", new Main());
+    this.goToScene("game-scene");
 
-    //#region background
-    const bgImg = new Background();
-    this.add(bgImg);
-    //#endregion background
-
-    const streetIMG = new Street();
-    this.add(streetIMG);
-
-    const groundtest = new Ground();
-    this.add(groundtest);
-    //#region player
-    // const player = new Actor();
-    // player.graphics.use(Resources.tosSprite);
-
-    //#endregion player
+    // this.addScene("gameover", new GameOver());
+    // this.goToScene("gameover");
+    // use gravety (false )
   }
-  // use gravety (false )
 }
-
 new Game();

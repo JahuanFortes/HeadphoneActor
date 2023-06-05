@@ -24,7 +24,7 @@ export class Background extends Actor {
     this.graphics.anchor = new Vector(0, 0);
     this.graphics.add(groupCITYBG);
     this.pos = new Vector(0, 0);
-    this.vel = new Vector(-100, 0);
+    this.vel = new Vector(-50, 0);
     this.scale = new Vector(0.4, 0.4);
   }
   onPostUpdate(engine, delta) {

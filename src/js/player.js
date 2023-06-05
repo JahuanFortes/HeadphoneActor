@@ -1,13 +1,12 @@
 import { ImageSource, Sound, Resource, Loader, Actor } from "excalibur";
-import { Actor, Vector, Input } from "excalibur";
+import { Resources } from "./resources.js";
+import { Vector, Input } from "excalibur";
 
 export class Player extends Actor {
-  constructor() {
-    super({});
-  }
   onPreUpdate(engine) {
-    let xspeed = 0;
+    const player = Resources.Player.toSprite();
     let yspeed = 0;
+
     if (engine.input.keyboard.isHeld(Input.Keys.W)) {
       yspeed = 300;
     }
@@ -18,6 +17,8 @@ export class Player extends Actor {
       yspeed = 300;
     }
 
-    this.vel = new Vector(xspeed, yspeed);
+    this.graphics.add(player);
+    this.vel = new Vector(yspeed);
+    this.scale = new Vector(5, 5);
   }
 }
