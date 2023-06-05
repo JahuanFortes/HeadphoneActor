@@ -1,12 +1,12 @@
-import { ImageSource, Sound, Resource, Loader, Actor } from "excalibur";
+import { ImageSource, Loader, Actor, CollisionType } from "excalibur";
 import { Resources } from "./resources.js";
 import { Vector, Input } from "excalibur";
 
 export class Player extends Actor {
   constructor() {
-    super({ width: 150, height: 200 });
+    super({ width: 150, height: 200, collisionType: CollisionType.Fixed });
+    this.body.useGravity = true;
   }
-
   onPreUpdate(engine) {
     const player = Resources.Player.toSprite();
     let yspeed = 0;
@@ -22,7 +22,9 @@ export class Player extends Actor {
     }
 
     this.graphics.add(player);
+    this.pos.add = new Vector(220, 180);
     this.vel = new Vector(yspeed);
     this.scale = new Vector(30, 30);
+    console.log(Player);
   }
 }

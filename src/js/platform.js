@@ -2,7 +2,6 @@ import { Actor, CollisionType, Vector } from "excalibur";
 import { Resources } from "./resources.js";
 
 export class Platform extends Actor {
-  offset;
   constructor() {
     super({
       width: 1600, // hitbox
@@ -19,10 +18,5 @@ export class Platform extends Actor {
   }
   hitSomething(event) {
     console.log("I hit something");
-  }
-  onPostUpdate(engine, delta) {
-    if (this.pos.x < -this.offset * 0.5) {
-      this.pos = new Vector(0, 0);
-    }
   }
 }
