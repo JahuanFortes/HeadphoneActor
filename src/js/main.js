@@ -6,8 +6,8 @@ import { Street } from "./street";
 import { Platform } from "./platform";
 import { Player } from "./player";
 import { BGM } from "./bgm";
-import { Main } from "./scenes/game";
 import { TitleScreen } from "./scenes/titlescreen";
+import { Main } from "./scenes/game";
 import { GameOver } from "./scenes/gameover";
 export class Game extends Engine {
   constructor() {
@@ -22,8 +22,8 @@ export class Game extends Engine {
 
   startGame() {
     // voorbeeld tekstlabel
-    // this.addScene("titlescreen", new TitleScreen());
-    // this.goToScene("titlescreen");
+    this.addScene("titlescreen", new TitleScreen());
+    this.goToScene("titlescreen");
 
     this.addScene("game-scene", new Main());
     this.goToScene("game-scene");
