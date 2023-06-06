@@ -11,14 +11,6 @@ import {
 } from "excalibur";
 import { Main } from "../scenes/game";
 import { Resources } from "../resources.js";
-
-export class Text extends Scene {
-  game;
-  constructor() {
-    super({ width: 800, height: 700 });
-  }
-  onInitialize(engine) {}
-}
 export class TitleScreen extends Scene {
   game;
   constructor() {
