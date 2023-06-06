@@ -3,7 +3,7 @@ import { Resources } from "./resources.js";
 export class Platform extends Actor {
   constructor() {
     super({
-      width: 1600, // hitbox
+      width: 2400, // hitbox
       height: 60,
       collisionType: CollisionType.Fixed,
     });

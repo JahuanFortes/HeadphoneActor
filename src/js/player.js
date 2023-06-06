@@ -2,6 +2,7 @@ import { ImageSource, Loader, Actor, CollisionType } from "excalibur";
 import { Resources } from "./resources.js";
 import { Vector, Input } from "excalibur";
 import { Platform } from "./platform.js";
+import { Heart } from "./heart.js";
 
 export class Player extends Actor {
   grounded = true;
@@ -19,6 +20,8 @@ export class Player extends Actor {
     this.pos = new Vector(80, 600);
     this.on("collisionstart", (event) => this.hitSomething(event));
     this.on("collisionend", (event) => this.leaveSomething(event));
+    this.heart = new Heart();
+    this.addChild(this.heart);
   }
 
   hitSomething(event) {
@@ -41,7 +44,7 @@ export class Player extends Actor {
         engine.input.keyboard.wasPressed(Input.Keys.Up)
       ) {
         console.log(this.vel.y);
-        yspeed = -500;
+        yspeed = -600;
       }
     }
     this.vel = new Vector(this.vel.x, this.vel.y + yspeed);
