@@ -4,6 +4,8 @@ import { Resources, ResourceLoader } from "../resources.js";
 import { Background } from "../background";
 import { Street } from "../street";
 import { Platform } from "../platform";
+import { Enemy } from "../enemy";
+import { Obstacle } from "../obstacle";
 import { Player } from "../player";
 import { BGM } from "../bgm";
 import { Scene } from "excalibur";
@@ -38,6 +40,12 @@ export class Main extends Scene {
 
     const platform = new Platform();
     this.add(platform);
+
+    // const enemy = new Enemy();
+    // this.add(enemy);
+
+    const obstacle = new Obstacle();
+    this.add(obstacle);
 
     //#region player
     const player = new Player();

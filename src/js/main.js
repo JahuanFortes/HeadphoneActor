@@ -1,11 +1,6 @@
 import "../css/style.css";
 import { Actor, Engine, Vector, Label, Font, Color, Physics } from "excalibur";
 import { Resources, ResourceLoader } from "./resources.js";
-import { Background } from "./background";
-import { Street } from "./street";
-import { Platform } from "./platform";
-import { Player } from "./player";
-import { BGM } from "./bgm";
 import { TitleScreen } from "./scenes/titlescreen";
 import { Main } from "./scenes/game";
 import { GameOver } from "./scenes/gameover";
@@ -28,8 +23,8 @@ export class Game extends Engine {
     this.addScene("game-scene", new Main());
     this.goToScene("game-scene");
 
-    // this.addScene("gameover", new GameOver());
-    // this.goToScene("gameover");
+    this.addScene("gameover", new GameOver());
+
     // use gravety (false )
   }
 }
