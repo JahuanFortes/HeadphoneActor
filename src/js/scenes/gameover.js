@@ -36,13 +36,13 @@ export class GameOver extends Scene {
         unit: FontUnit.Px,
       }),
     });
-    const previous = JSON.parse(localStorage.getItem("score"));
+    const previous = JSON.parse(localStorage.getItem("time"));
     if (previous) {
-      console.log(previous.score);
+      console.log(previous.time);
     }
 
-    this.scoreText = new Label({
-      text: `You lasted ${previous.score} S`,
+    this.timeText = new Label({
+      text: `You lasted ${previous.time} S`,
       font: new Font({
         unit: FontUnit.Px,
         family: "Biome",
@@ -51,7 +51,7 @@ export class GameOver extends Scene {
       }),
       pos: new Vector(200, 200),
     });
-    this.add(this.scoreText);
+    this.add(this.timeText);
 
     let textField2 = new Label({
       text: "Press F5 to Retry",

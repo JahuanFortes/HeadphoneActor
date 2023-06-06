@@ -22,8 +22,8 @@ import { Scene } from "excalibur";
 
 export class Main extends Scene {
   game;
-  score = 0;
-  scoreText;
+  time = 0;
+  timeText;
   constructor() {
     super({ width: 800, height: 700 });
   }
@@ -38,7 +38,7 @@ export class Main extends Scene {
       }),
     });
 
-    this.scoreText = new Label({
+    this.timeText = new Label({
       text: "Start!",
       font: new Font({
         unit: FontUnit.Px,
@@ -79,21 +79,21 @@ export class Main extends Scene {
     //#endregion player
 
     const timer = new Timer({
-      fcn: () => this.addScore(),
+      fcn: () => this.addTime(),
       repeats: true,
       interval: 1000,
     });
     this.add(timer);
     timer.start();
     this.add(textField);
-    this.add(this.scoreText);
+    this.add(this.timeText);
   }
-  addScore() {
-    this.score++;
+  addTime() {
+    this.time++;
     let data = {
-      score: this.score,
+      time: this.time,
     };
-    this.scoreText.text = `Time passed: ${this.score} 's`;
-    localStorage.setItem("score", JSON.stringify(data));
+    this.timeText.text = `Time passed: ${this.time} 's`;
+    localStorage.setItem("time", JSON.stringify(data));
   }
 }
